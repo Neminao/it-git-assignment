@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello ITAcademy!</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    </head>
+    <style> 
+    h1 {
+        font-family: 'Roboto Mono', monospace;
+        position: relative;
+    }
+    span {
+        color: #e31b23
+    }
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    h1:hover::after{
+        content: 'How are you?';
+        position: absolute;
+        top:100%;
+        left:0;
+    }
+    </style>
+    <body>
+        <div>
+            <h1>Hello IT<span>Academy</span>!</h1>
+        </div>
+    </body>
+</html>
