@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Glow</title>
+    <style>
+        .background {
+            position: relative;
+            background: #050210;
+            width: 400px;
+            height: 400px;
+
+        }
+
+        .container {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            width: 400px;
+            height: 400px;
+        }
+
+        .outer-circle,
+        .middle-circle,
+        .inner-circle,
+        .inner-circle::after {
+            border-radius: 100%;
+            
+        }
+
+        .middle-circle,
+        .outer-circle {
+            background: rgb(251, 93, 173);
+            background: linear-gradient(90deg, rgba(251, 93, 173, 1) 0%, rgba(85, 251, 159, 1) 52%, rgba(185, 122, 255, 1) 100%);
+            animation: rotation 2s linear infinite;
+        }
+
+        .outer-circle {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            filter: blur(30px);
+        }
+
+        .middle-circle {
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            margin: 20px;
+        }
+
+        .inner-circle {
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            background: #050210;
+            margin: 20px;
+        }
+        .inner-circle::after {
+            content: '';
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            background: #050210;
+            animation: pulse 1s ease-out infinite;
+        }
+
+        @keyframes rotation {
+            from {
+                transform: rotate(0deg)
+            }
+
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        @keyframes pulse {
+            from {
+                transform: scale(0);
+                background: #1a0b50;
+            }
+
+            to {
+                transform: scale(220px);
+                background: #050210;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <div class="container">
+            <div class="outer-circle"></div>
+            <div class="middle-circle"></div>
+            <div class="inner-circle"></div>
+        </div>
+    </div>
+</body>
+
+</html>
